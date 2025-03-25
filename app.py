@@ -130,7 +130,15 @@ import re
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, resources={
+    r"/api/*": {
+        "origins": [
+            "https://crop-ai-frontend.onrender.com",  # Frontend URL
+            "http://localhost:3000",  # Local development
+            "*"  # Use cautiously, preferably specify exact origins
+        ]
+    }
+})  # Enable CORS for all routes
 app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
