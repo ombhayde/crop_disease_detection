@@ -127,8 +127,6 @@ from googlesearch import search
 import time
 import re
 
-os.system("pip install dlib")
-import dlib
 
 # Initialize Flask app
 app = Flask(__name__)
