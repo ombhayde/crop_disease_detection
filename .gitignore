@@ -1,0 +1,16 @@
+# Ignore unnecessary files
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Ignore dataset folders
+data/raw/
+data/processed/
+data/augmented/
+
+# Ignore model checkpoints and logs
+models/checkpoints/
+logs/
+node_modules/  # If using Node.js for frontend
+.env  # Environment variables

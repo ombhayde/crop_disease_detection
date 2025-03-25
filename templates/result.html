@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detection Results</h1>
+        <div class="result-container">
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+            <div class="result-info">
+                <h2>Diagnosis:</h2>
+                <p class="diagnosis">{{ predicted_class }}</p>
+                <h2>Confidence:</h2>
+                <p class="confidence">{{ confidence|round(2) }}%</p>
+            </div>
+        </div>
+        <a href="/" class="back-button">Analyze Another Image</a>
+    </div>
+</body>
+</html>
